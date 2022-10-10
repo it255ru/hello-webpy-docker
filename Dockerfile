@@ -11,7 +11,7 @@ RUN apk add --no-cache python3 && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     pip3 install web.py
 
-COPY ./server/run.sh /run
-COPY ./server/hello.py /opt
-RUN chmod +x /run/run.sh
-ENTRYPOINT /run/run.sh
+COPY ./run.sh /run
+COPY ./hello.py /opt
+RUN chmod +x /run.sh
+ENTRYPOINT /run.sh
